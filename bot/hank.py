@@ -23,5 +23,7 @@ async def on_message(message):
  		print(guild)
  		for member in guild.members:
  			member_list.append(member)
+			
+		await channel.send(member_list)
 
 client.run('OTgwMjg2MDE2MTM0OTg3ODc2.GB6pmM.TDIRbLlf59zNaoOiDnmKATNzeaAUKAhlAEU84E')
