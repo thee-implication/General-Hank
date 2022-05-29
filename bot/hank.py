@@ -1,6 +1,5 @@
 import discord
 import sqlite3
-import requests
 from discord.ext import commands
 
 intents = discord.Intents.default()
@@ -17,13 +16,13 @@ async def on_ready():
 
 @client.event 
 async def on_message(message):
- if message.content.startswith('$getmembers'):
- 	member_list = []
- 	for guild in client.guilds:
- 		print(guild)
- 		for member in guild.members:
- 			member_list.append(member)
-			
+	if message.content.startswith('$getmembers'):
+		channel = client.get_channel(804579091700514869)
+		member_list = []
+		for guild in client.guilds:
+			print(guild)
+			for member in guild.members:
+				member_list.append(member)
 		await channel.send(member_list)
 
 client.run('OTgwMjg2MDE2MTM0OTg3ODc2.GB6pmM.TDIRbLlf59zNaoOiDnmKATNzeaAUKAhlAEU84E')
